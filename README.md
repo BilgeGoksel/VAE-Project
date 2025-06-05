@@ -181,4 +181,44 @@ VAE, modern generative modeling'in temel taşlarından biri olup, birçok ileri 
 
 4. Rezende, D. J., Mohamed, S., & Wierstra, D. (2014). Stochastic backpropagation and approximate inference in deep generative models. *ICML*.
 
-5. Burda, Y., Grosse, R., & Salakhutdinov, R. (2015). Importance weighted autoencoders. *
+5. Burda, Y., Grosse, R., & Salakhutdinov, R. (2015). Importance weighted autoencoders. *arXiv preprint arXiv:1509.00519*.
+
+6. Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press.
+
+## Kurulum ve Çalıştırma
+
+### Gereksinimler
+```bash
+pip install torch torchvision matplotlib numpy tqdm
+```
+
+### Dosya Yapısı
+```
+project/
+├── vae_implementation.py      # Ana VAE kodu
+├── comparison_autoencoder.py  # Karşılaştırma için standart AE
+├── README.md                  # Bu dosya
+├── data/                      # MNIST veri seti (otomatik indirilir)
+├── results/                   # Sonuç görüntüleri
+│   ├── reconstruction_comparison.png
+│   ├── generated_samples.png
+│   ├── training_loss.png
+│   └── model_comparison_reconstruction.png
+└── vae_model.pth             # Eğitilmiş model ağırlıkları
+```
+
+### Çalıştırma
+```bash
+# Ana VAE eğitimi
+python vae_implementation.py
+
+# Model karşılaştırması
+python comparison_autoencoder.py
+```
+
+## Tekrarlanabilirlik
+
+Bu çalışma tamamen tekrarlanabilir niteliktedir. Aynı hyperparameters ve random seed kullanılarak benzer sonuçlar elde edilebilir. Kodda `torch.manual_seed(42)` kullanılarak deterministic sonuçlar sağlanmıştır.
+
+---
+
